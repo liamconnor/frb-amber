@@ -24,3 +24,4 @@ ENV SOURCE_ROOT="/opt/amber/src"
 ENV INSTALL_ROOT="/usr/local"
 WORKDIR /opt/amber/AMBER_setup
 RUN ./amber.sh install development
+ENV LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
