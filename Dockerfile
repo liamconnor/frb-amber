@@ -8,6 +8,7 @@ RUN apt-get -qq -y update && apt-get -qq -y install \
     git \
     cmake \
     libgtest-dev \
+    ocl-icd-opencl-dev \
     opencl-headers
 RUN apt-get clean
 
@@ -20,6 +21,6 @@ RUN cp *.a /usr/lib
 WORKDIR /opt/amber
 RUN git clone https://github.com/AA-ALERT/AMBER_setup.git -b development
 ENV SOURCE_ROOT="/opt/amber/src"
-ENV INSTALL_ROOT="/opt/amber/build"
+ENV INSTALL_ROOT="/usr/local"
 WORKDIR /opt/amber/AMBER_setup
 RUN ./amber.sh install development
