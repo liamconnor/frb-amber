@@ -1,5 +1,6 @@
 # Use NVIDIA Docker image
 FROM nvidia/cuda
+FROM kernsuite/base:5
 
 # Install all necessary system packages
 WORKDIR /
