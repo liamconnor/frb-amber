@@ -1,5 +1,5 @@
 # Use NVIDIA Docker image
-FROM nvidia/cuda
+FROM nvidia/opencl
 
 # Install all necessary system packages
 WORKDIR /
@@ -25,3 +25,9 @@ ENV INSTALL_ROOT="/usr/local"
 WORKDIR /opt/amber/AMBER_setup
 RUN ./amber.sh install development
 ENV LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
+
+WORKDIR /amber_run
+COPY . .
+RUN chmod a+x challenge.sh
+ENTRYPOINT ["/bin/bash", "-c"]
+CMD ["/amber_run/challenge.sh"]
