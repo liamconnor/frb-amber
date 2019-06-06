@@ -44,7 +44,8 @@ SNR="SNR"
 ## Number of channels
 CHANNELS="1536"
 ## Frequency of the lowest channel, in MHz
-MIN_FREQ="1249.7009277"
+#MIN_FREQ="1249.7009277"
+MIN_FREQ="1249.89624023438"
 ## Bandwidth of a channel, in MHz
 CHANNEL_BANDWIDTH="0.1953125"
 ## Number of samples per batch
@@ -55,10 +56,12 @@ SAMPLING_TIME="0.00008192"
 DOWNSAMPLING=1
 ## Number of subbands
 SUBBANDS="32"
+
 ## Number of DMs to dedisperse in step one; subbanding mode only
 SUBBANDING_DMS="128"
 ## First DM in step one; subbanding mode only
-SUBBANDING_DM_FIRST="1300.0"
+#SUBBANDING_DM_FIRST="1300.0"
+SUBBANDING_DM_FIRST="5.0"
 ## DM step in step one; subbanding mode only
 SUBBANDING_DM_STEP="6.4"
 ## Number of DMs to dedisperse in either the single step or subbanding step two
