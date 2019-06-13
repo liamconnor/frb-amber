@@ -1,5 +1,5 @@
 # Use NVIDIA Docker image
-FROM nvidia/opencl
+FROM nvidia/opencl:devel-ubuntu18.04
 
 # Install all necessary system packages
 WORKDIR /
@@ -8,9 +8,8 @@ RUN apt-get -qq -y update && apt-get -qq -y install \
     git \
     cmake \
     libgtest-dev \
-    ocl-icd-opencl-dev \
-    opencl-headers
-RUN apt-get clean
+    opencl-headers \
+    && apt-get clean
 
 # Install Google Test
 WORKDIR /usr/src/gtest/build
@@ -26,8 +25,11 @@ WORKDIR /opt/amber/AMBER_setup
 RUN ./amber.sh install development
 ENV LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
 
+# Run AMBER for the challenge
 WORKDIR /amber_run
-COPY . .
-RUN chmod a+x challenge.sh
+COPY conf .
+COPY challenge_sprint.sh .
+COPY challenge.sh .
+RUN chmod u+x challenge.sh
 ENTRYPOINT ["/bin/bash", "-c"]
 CMD ["/amber_run/challenge.sh"]
