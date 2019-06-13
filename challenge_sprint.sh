@@ -39,12 +39,11 @@ MAX_ITEMS_DIM1="32"
 # Scenario
 ## Switch to select the subbanding mode; dedispersion specific
 SUBBANDING=true
-## Switch to select the SNR Mode ["SNR", "MOMAD", "MOMSIGMACUT"]
-SNR="SNR"
+## Switch to select the SNR Mode ["SNR", "SNR_SC", "MOMAD", "MOMSIGMACUT"]
+SNR="SNR_SC"
 ## Number of channels
 CHANNELS="1536"
 ## Frequency of the lowest channel, in MHz
-#MIN_FREQ="1249.7009277"
 MIN_FREQ="1249.89624023438"
 ## Bandwidth of a channel, in MHz
 CHANNEL_BANDWIDTH="0.1953125"
@@ -56,20 +55,18 @@ SAMPLING_TIME="0.00008192"
 DOWNSAMPLING=1
 ## Number of subbands
 SUBBANDS="32"
-
 ## Number of DMs to dedisperse in step one; subbanding mode only
 SUBBANDING_DMS="128"
 ## First DM in step one; subbanding mode only
-#SUBBANDING_DM_FIRST="1300.0"
 SUBBANDING_DM_FIRST="5.0"
 ## DM step in step one; subbanding mode only
-SUBBANDING_DM_STEP="6.4"
+SUBBANDING_DM_STEP="16.0"
 ## Number of DMs to dedisperse in either the single step or subbanding step two
 DMS="32"
 ## First DM in either the single step or subbanding step two
 DM_FIRST="0.0"
 ## DM step in either the single step or subbanding step two
-DM_STEP="0.2"
+DM_STEP="0.5"
 ## Number of input beams
 BEAMS="1"
 ## Number of synthesized output beams
@@ -88,3 +85,7 @@ ZAPPED_CHANNELS=""
 MEDIAN_STEP=5
 ## Sigma cut value for MOMSIGMACUT mode; this value is currently harcoded in AMBER
 NSIGMA=3
+## Sigma cut for the SNR computation in SNR_SC mode
+SNR_SIGMA=3.00
+## Correction factor for the SNR computation in SNR_SC mode
+CORRECTION_FACTOR=1.014
