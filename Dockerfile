@@ -27,7 +27,7 @@ ENV LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
 
 # Run AMBER for the challenge
 WORKDIR /amber_run
-COPY conf .
+COPY conf ./conf/
 COPY challenge_sprint.sh .
 COPY challenge.sh .
 RUN chmod u+x challenge.sh
