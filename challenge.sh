@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file="/data/input.fil"
+file="/data/input/test_data"
 nbatch=83
 
 source challenge_sprint.sh
