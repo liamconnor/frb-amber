@@ -42,15 +42,15 @@ SUBBANDING=true
 ## Switch to select the SNR Mode ["SNR", "SNR_SC", "MOMAD", "MOMSIGMACUT"]
 SNR="SNR_SC"
 ## Number of channels
-CHANNELS="1536"
+CHANNELS="336"
 ## Frequency of the lowest channel, in MHz
-MIN_FREQ="1249.89624023438"
+MIN_FREQ="1214.700928"
 ## Bandwidth of a channel, in MHz
-CHANNEL_BANDWIDTH="0.1953125"
+CHANNEL_BANDWIDTH="1.0"
 ## Number of samples per batch
-SAMPLES="12500"
+SAMPLES="771"
 ## Sampling time
-SAMPLING_TIME="0.00008192"
+SAMPLING_TIME="0.001328"
 ## Downsampling factor
 DOWNSAMPLING=1
 ## Number of subbands
